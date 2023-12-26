@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+
+<ScrollView
+
     android:layout_height="match_parent"
-    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/CLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar"
@@ -17,27 +27,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="match_parent"
-           android:text="@string/routeoneapp"
-           android:textColor="@color/white"
-           android:textSize="23sp"
-           android:textStyle="bold"
-           android:layout_marginTop="15dp"
-           android:layout_marginStart="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/routeoneapp"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+
 
     <ImageView
         android:id="@+id/androidImage"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="220dp"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
        android:src="@drawable/android"
+        android:onClick="onViewClick"
         android:scaleType="fitXY"
         android:contentDescription="@string/todo" />
 
@@ -50,7 +63,7 @@
         android:text="@string/android_course"
         android:textSize="13sp"
         android:textStyle="bold"
-        android:onClick="onAndroidCourse"
+        android:onClick="onViewClick"
         android:textColor="@color/white"
         android:backgroundTint="#2B41BD"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,12 +73,13 @@
     <ImageView
         android:id="@+id/iosImage"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="220dp"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/androidBtn"
         android:src="@drawable/ios"
+        android:onClick="onViewClick"
         android:scaleType="fitXY"
         android:contentDescription="@string/todo" />
 
@@ -80,7 +94,7 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:backgroundTint="#2B41BD"
-        android:onClick="onIosCourse"
+        android:onClick="onViewClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iosImage" />
@@ -88,12 +102,13 @@
     <ImageView
         android:id="@+id/fullstackImage"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="220dp"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iosBtn"
         android:src="@drawable/fullstack"
+        android:onClick="onViewClick"
         android:scaleType="fitXY"
         android:contentDescription="@string/todo" />
 
@@ -108,8 +123,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:backgroundTint="#2B41BD"
-        android:onClick="onFullstackCourse"
+        android:onClick="onViewClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullstackImage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

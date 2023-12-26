@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,19 +15,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onAndroidCourse(View v){
-        Intent intent = new Intent(this,AndroidCourseActivity.class);
-        startActivity(intent);
+    public void onViewClick(View v){
+        if(v.getId()==R.id.androidImage || v.getId()==R.id.androidBtn){
+            startDetailsCourseActivity(Constants.ANDROID);
+        }else if(v.getId()==R.id.iosImage || v.getId()==R.id.iosBtn){
+            startDetailsCourseActivity(Constants.IOS);
+        }else if(v.getId()==R.id.fullstackImage || v.getId() == R.id.fullstackBtn){
+            startDetailsCourseActivity(Constants.FULLSTACK);
+        }
     }
 
-    public void onIosCourse(View v){
-        Intent intent = new Intent(this,IosCourseActivity.class);
+    public void startDetailsCourseActivity(String courseName){
+        Intent intent = new Intent(this,DetailsCourseActivity.class);
+        intent.putExtra(Constants.KEYINTENT,courseName);
         startActivity(intent);
     }
-
-    public void onFullstackCourse(View v){
-        Intent intent = new Intent(this,FullStackCourseActivity.class);
-        startActivity(intent);
-    }
-
 }
